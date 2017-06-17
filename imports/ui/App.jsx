@@ -6,9 +6,9 @@ import Snap from './Snap.jsx';
 export default class App extends Component {
   getSnaps() {
     return [
-      { _id: 1, text: 'This is snap 1' },
-      { _id: 2, text: 'This is snap 2' },
-      { _id: 3, text: 'This is snap 3' },
+      { _id: 1, src: 'snaps/00001.jpg' },
+      { _id: 2, src: 'snaps/00002.jpg' },
+      { _id: 3, src: 'snaps/00003.jpg' },
     ];
   }
  

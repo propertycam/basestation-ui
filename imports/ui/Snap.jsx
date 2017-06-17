@@ -4,8 +4,7 @@ import React, { Component, PropTypes } from 'react';
 export default class Snap extends Component {
   render() {
     return (
-      //<li>{this.props.snap.text}</li>
-      <img src="snaps/00002.jpg"/>
+      <img src={this.props.snap.src}/>
     );
   }
 }
