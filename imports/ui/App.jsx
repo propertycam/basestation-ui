@@ -42,7 +42,8 @@ App.propTypes = {
 
 export default createContainer(() => {
   return {
-    snaps: Snaps.find({}).fetch(),
+    //snaps: Snaps.find({}).fetch(),
+    snaps: Snaps.find({}, { sort: { createdAt: -1}}).fetch(),
   };
 }, App);
 
