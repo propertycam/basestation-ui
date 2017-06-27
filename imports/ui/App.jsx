@@ -1,50 +1,26 @@
 import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'
 
-import { Snaps } from '../api/snaps.js';
-
-import Snap from './Snap.jsx';
+import Events from './Events.jsx';
  
 // App component - represents the whole app
-class App extends Component {
-//  getSnaps() {
-//    return [
-//      { _id: 1, src: 'snaps/00001.jpg' },
-//      { _id: 2, src: 'snaps/00002.jpg' },
-//      { _id: 3, src: 'snaps/00003.jpg' },
-//    ];
-//  }
- 
-  renderSnaps() {
-    return this.props.snaps.map((snap) => (
-      <Snap key={snap._id} snap={snap} />
-    ));
-  }
+export default class App extends Component {
  
   render() {
     return (
-      <div className="container">
-        <header>
-          <h1>Snaps</h1>
-        </header>
- 
-        <ul>
-          {this.renderSnaps()}
-        </ul>
-      </div>
+      <Tabs defaultIndex={0} onSelect={index => console.log(index)}>
+        <TabList>
+          <Tab>Cameras</Tab>
+          <Tab>Events</Tab>
+        </TabList>
+        <TabPanel>Camera 1</TabPanel>
+        <TabPanel><Events /></TabPanel>
+      </Tabs>
     );
   }
 }
 
-App.propTypes = {
-  snaps: PropTypes.array.isRequired,
-};
 
-export default createContainer(() => {
-  return {
-    //snaps: Snaps.find({}).fetch(),
-    snaps: Snaps.find({}, { sort: { createdAt: -1}}).fetch(),
-  };
-}, App);
 
 
