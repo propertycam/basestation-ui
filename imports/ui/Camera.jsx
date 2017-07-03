@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 export default class Camera extends Component {
   render() {
     return (
-        <img src={this.props.camera.src}/>
+        <img src={this.props.camera.lastsnap}/>
     );
   }
 }
