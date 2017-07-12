@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
 
-import Events from './Events.jsx';
+import EventsView from './EventsView.jsx';
 import CamerasView from './CamerasView.jsx';
  
 // App component - represents the whole app
@@ -16,7 +16,7 @@ export default class App extends Component {
           <Tab>Events</Tab>
         </TabList>
         <TabPanel><CamerasView /></TabPanel>
-        <TabPanel><Events /></TabPanel>
+        <TabPanel><EventsView /></TabPanel>
       </Tabs>
     );
   }

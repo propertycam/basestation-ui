@@ -5,7 +5,7 @@ import { Events } from '../api/events.js';
 import Event from './Event.jsx';
  
 // App component - represents the whole app
-class Events extends Component {
+class EventsView extends Component {
 //  getSnaps() {
 //    return [
 //      { _id: 1, src: 'snaps/00001.jpg' },
@@ -35,13 +35,13 @@ class Events extends Component {
   }
 }
 
-Events.propTypes = {
-  snaps: PropTypes.array.isRequired,
+EventsView.propTypes = {
+  events: PropTypes.array.isRequired,
 };
 
 export default createContainer(() => {
   return {
-    //snaps: Snaps.find({}).fetch(),
-    events: Events.find({}, { sort: { time: -1}}).fetch(),
+    events: Events.find({}).fetch(),
+    //events: Events.find({}, { sort: { time: -1}}).fetch(),
   };
-}, Events);
+}, EventsView);
